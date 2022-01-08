@@ -5,5 +5,6 @@ export 'frame_parser.dart';
 export 'picture_frame.dart';
 //export 'table_of_contents_frame.dart';
 export 'text_information_frame.dart';
+export 'transcription_frame.dart';
 //export 'url_frame.dart';
 export 'user_url_frame.dart';

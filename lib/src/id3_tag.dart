@@ -44,6 +44,7 @@ class ID3Tag {
     return _chapters;
   }
 
+  String? get lyrics => frameWithTypeAndName<Transcription>('USLT')?.lyrics;
 
   ID3Tag({required this.tagVersion, required this.tagFound, required this.frames});
 
