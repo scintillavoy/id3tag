@@ -34,7 +34,10 @@ class TextInformationFrameParser extends FrameParser<TextInformation> {
   TextInformation? parseFrame(RawFrame rawFrame) {
     final frameName = rawFrame.frameName;
     final frameContent = rawFrame.frameContent;
-    final value = frameContent.readString(terminatorMandatory: false);
+    String value = frameContent.readString(terminatorMandatory: false);
+    if (frameName == 'TXXX') {
+      value += '=${frameContent.readString(terminatorMandatory: false)}';
+    }
     return TextInformation(frameName: frameName, frameDescription: _textFrames[frameName] ?? '-', value: value);
   }
 }
